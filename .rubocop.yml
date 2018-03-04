@@ -1,0 +1,125 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+
+
+# Disable complexity / length cops
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/ParameterLists:
+  Enabled: false
+
+
+# Disable performance cops that may lead to less readable code in some cases
+
+Performance/Casecmp:
+  Description: >-
+             Use `casecmp` rather than `downcase ==`, `upcase ==`, `== downcase`, or `== upcase`..
+  Reference: 'https://github.com/JuanitoFatas/fast-ruby#stringcasecmp-vs-stringdowncase---code'
+  Enabled: false
+
+Performance/RedundantMerge:
+  Description: 'Use Hash#[]=, rather than Hash#merge! with a single key-value pair.'
+  Reference: 'https://github.com/JuanitoFatas/fast-ruby#hashmerge-vs-hash-code'
+  Enabled: false
+
+
+# Disable various style cops
+
+Style/AsciiComments: # Typographic quotes etc. are perfectly okay in comments
+  Enabled: false
+
+Style/BlockDelimiters: # Both do…end and {…} are okay for all kinds of blocks
+  Enabled: false
+
+Style/ClassAndModuleChildren: # Both nested and compact namespacing is okay
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyCaseCondition: # Sometimes a case statement reads better than if … elsif … end
+  Enabled: false
+
+Layout/EmptyLines: # Consecutive empty lines are sometimes useful for additional structure
+  Enabled: false
+
+Style/FormatString: # All `sprintf`, `format`, and `%` are okay for formatting strings
+  Enabled: false
+
+Style/GuardClause: # Sometimes using a guard clause makes the code harder to follow
+  Enabled: false
+
+Style/IfUnlessModifier: # Sometimes using a modifier makes the code harder to read
+  Enabled: false
+
+Style/Lambda: # Both `->` and `lambda` are okay for all kinds of procs
+  Enabled: false
+
+Style/NumericPredicate: # Using `== 0` is okay (in some cases at least)
+  Enabled: false
+
+Style/ParallelAssignment: # Parallel assignment is ok for simple cases
+  Enabled: false
+
+Style/SingleLineBlockParams: # Block params should be as meaningful as possible
+  Enabled: false
+
+Style/TrailingCommaInArguments: # Multiline parameter might use trailing commas (like in literals)
+  Enabled: false
+
+Style/WordArray: # Especially in nested arrays consistence is important (even if some of the inner arrays could be replace by word arrays)
+  Enabled: false
+
+
+# Enforce our preferred layout and styling choices
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/DotPosition: # Trailing dot works better with intermittent blank lines and copy-pasting into irb
+  EnforcedStyle: trailing
+
+Layout/EmptyLineBetweenDefs: # Single line method definitions don’t need blank lines in-between them.
+  AllowAdjacentOneLineDefs: true
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/SpaceBeforeBlockBraces:
+  EnforcedStyle: no_space
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/AndOr: # `and` and `or` may be used for control flow (but not in conditionals)
+  EnforcedStyle: conditionals
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma

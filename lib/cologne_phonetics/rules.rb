@@ -28,7 +28,7 @@ module ColognePhonetics
       end
 
       def change(chars, to:, before: nil, not_before: nil, after: nil, not_after: nil, initial: nil)
-        matcher = ->(prev_char, char, next_char) {
+        matcher = ->(prev_char, char, next_char){
           return unless chars.include?(char)
           return if initial && prev_char
           return if before && (!next_char || !before.include?(next_char))

@@ -2,6 +2,7 @@ require 'cologne_phonetics/rules'
 require 'cologne_phonetics/version'
 
 module ColognePhonetics
+  # rubocop:disable SpaceBeforeComma
   Rules.define do
     change 'aeijouy', to: '0'
     change 'äöü'    , to: '0' # additional rule: treat umlauts like vowels
@@ -26,6 +27,7 @@ module ColognePhonetics
     change 'dt'     , to: '8', before: 'csz'
     change 'x'      , to: '8', after: 'ckq'
   end
+  # rubocop:enable SpaceBeforeComma
 
   def self.encode(string)
     string.split(' ').map{ |word| encode_word(word) }.join(' ')
