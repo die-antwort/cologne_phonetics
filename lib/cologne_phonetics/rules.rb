@@ -18,7 +18,13 @@ module ColognePhonetics
       @rules.each do |matcher, code|
         return code if matcher.call(prev_char, char, next_char)
       end
+      debug_info "Cologne Phonetics: No rule for '#{char}' (prev: '#{prev_char}', next: '#{next_char}')"
       nil
+    end
+
+    def self.debug_info(message)
+      return unless ColognePhonetics.debug
+      $stderr.puts message # rubocop:disable StderrPuts
     end
 
     class DSL

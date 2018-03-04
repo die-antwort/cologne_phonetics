@@ -4,6 +4,10 @@ require 'cologne_phonetics/rules'
 require 'cologne_phonetics/version'
 
 module ColognePhonetics
+  class << self
+    attr_accessor :debug
+  end
+
   # rubocop:disable SpaceBeforeComma
   Rules.define do
     change 'aeijouy', to: '0'

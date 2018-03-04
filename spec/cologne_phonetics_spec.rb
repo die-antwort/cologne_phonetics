@@ -55,4 +55,23 @@ RSpec.describe ColognePhonetics do
     example{ expect('RÖHRE').to get_encoded_as('77' ) }
     # rubocop:enable SpaceInsideParens
   end
+
+  context 'with debugging enabled' do
+    around do |ex|
+      ColognePhonetics.debug = true
+      ex.run
+      ColognePhonetics.debug = false
+    end
+
+    it 'emits warnings if no matching rules are found' do
+      result = nil
+      expect{ result = ColognePhonetics.encode('Olé') }.
+        to output("Cologne Phonetics: No rule for 'é' (prev: 'l', next: '')\n").to_stderr
+      expect(result).to eq('05')
+    end
+  end
+
+  it 'does not emit warnings if no matching rules are found and debugging is not enabled' do
+    expect{ ColognePhonetics.encode('Olé') }.to output('').to_stderr
+  end
 end
