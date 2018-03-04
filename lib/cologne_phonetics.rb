@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'cologne_phonetics/rules'
 require 'cologne_phonetics/version'
 

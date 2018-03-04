@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ColognePhonetics
   module Rules
     def self.define(&block)
