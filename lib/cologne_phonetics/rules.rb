@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module ColognePhonetics
+  # @api private
   module Rules
     def self.define(&block)
       @rules = DSL.new(&block).rules

@@ -5,6 +5,8 @@ require 'cologne_phonetics/version'
 
 module ColognePhonetics
   class << self
+    # Enable / disable debug mode. If set to true, using {.encode} or {.encode_word} will output
+    # warnings to `$stderr` if they encounter characters that cannot be encoded.
     attr_accessor :debug
   end
 
@@ -35,10 +37,21 @@ module ColognePhonetics
   end
   # rubocop:enable SpaceBeforeComma
 
+  # Encode string using Cologne phonetics rules. The encoding process can handle upper and lower case
+  # characters in the range of `a–z`, as well as `äöüß`. Everything else is ignored.
+  #
+  # If the string consists of several words separated by spaces, each word is encoded seperately,
+  # and the resulting codes are then again joined together with spaces.
+  #
+  # @return [String] Encoded string (consist of digits only, and maybe spaces)
   def self.encode(string)
     string.split(' ').map{ |word| encode_word(word) }.join(' ')
   end
 
+  # Low-level method for encoding a single word using Cologne phonetics rules (spaces will be
+  # ignored). You most probably want to use {.encode} instead.
+  #
+  # @return [String] Encoded word (consists of digits only)
   def self.encode_word(word)
     Rules.apply_to(word).squeeze.gsub(/(.)0/, '\1')
   end
