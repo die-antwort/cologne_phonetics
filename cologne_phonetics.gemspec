@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/noniq/cologne_phonetics'
   spec.license       = 'MIT'
 
-  spec.files         = Dir['{bin,lib}/**/*', '.gitignore', '.rspec', 'Gemfile', 'LICENSE.txt', 'README.md', 'Rakefile']
+  spec.files         = Dir['{lib}/**/*', 'CHANGELOG.md', 'LICENSE.txt', 'README.md']
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}){ |f| File.basename(f) }
   spec.require_paths = ['lib']
