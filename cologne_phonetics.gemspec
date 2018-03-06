@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Cologne phonetics (Kölner Phonetik) text encoding algorithm'
   spec.description   = 'Cologne phonetics (also Kölner Phonetik, Cologne process) is a phonetic algorithm which assigns to words a sequence of digits, the phonetic code.'
-  spec.homepage      = 'TODO: Put your gem\'s website or public repo URL here.'
+  spec.homepage      = 'https://github.com/noniq/cologne_phonetics'
   spec.license       = 'MIT'
 
   spec.files         = Dir['{bin,lib}/**/*', '.gitignore', '.rspec', 'Gemfile', 'LICENSE.txt', 'README.md', 'Rakefile']
