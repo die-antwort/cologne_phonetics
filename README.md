@@ -1,6 +1,6 @@
 # ColognePhonetics
 
-The [“Cologne phonetics (Kölner Phonetik)”](https://en.wikipedia.org/wiki/Cologne_phonetics) algorithm encodes words in a way that enables to search for similarly sounding words. It’s related to the [“Soundex”](https://en.wikipedia.org/wiki/Soundex) algorithm, but better suited for the German language.
+The [“Cologne phonetics (Kölner Phonetik)”](https://en.wikipedia.org/wiki/Cologne_phonetics) algorithm encodes words in a way that enables to search for similarly sounding words. It’s related to [“Soundex”](https://en.wikipedia.org/wiki/Soundex) and [“Metaphone”](https://en.wikipedia.org/wiki/Metaphone), but better suited for the German language.
 
 This implementations closely follows the algorithm as described on its Wikipedia page. Support for umlauts (Ä, Ö, Ü) and ß has been added as suggested there.
 

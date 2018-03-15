@@ -11,8 +11,10 @@ Gem::Specification.new do |spec|
   spec.email         = ['stefan@die-antwort.eu']
 
   spec.summary       = 'Cologne phonetics (Kölner Phonetik) text encoding algorithm'
-  spec.description   = 'Cologne phonetics (also Kölner Phonetik, Cologne process) is a phonetic algorithm which assigns to words a sequence of digits, the phonetic code.'
-  spec.homepage      = 'https://github.com/noniq/cologne_phonetics'
+  spec.description   = 'The Cologne phonetics (also Kölner Phonetik, Cologne process) algorithm encodes ' \
+                       'words in a way that enables to search for similarly sounding words. It’s related '\
+                       'to Soundex and Metaphone, but better suited for the German language.'
+  spec.homepage      = 'https://github.com/die-antwort/cologne_phonetics'
   spec.license       = 'MIT'
 
   spec.files         = Dir['{lib}/**/*', 'CHANGELOG.md', 'LICENSE.txt', 'README.md']
